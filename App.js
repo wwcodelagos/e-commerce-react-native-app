@@ -1,11 +1,11 @@
-import React from 'react';
-import { AppLoading } from 'expo';
-import { Container, Text } from 'native-base';
-import * as Font from 'expo-font';
-import { Ionicons } from '@expo/vector-icons';
-import Login from './Components/login'
-import Register from './Components/Register';
-
+import React from "react";
+import { AppLoading } from "expo";
+import { Container, Text } from "native-base";
+import * as Font from "expo-font";
+import { Ionicons } from "@expo/vector-icons";
+import Login from "./Components/login";
+import Register from "./Components/Register";
+import TabScreen from "./screen/TabScreen";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,8 +17,8 @@ export default class App extends React.Component {
 
   async componentDidMount() {
     await Font.loadAsync({
-      Roboto: require('native-base/Fonts/Roboto.ttf'),
-      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
       ...Ionicons.font,
     });
     this.setState({ isReady: true });
@@ -31,7 +31,8 @@ export default class App extends React.Component {
 
     return (
       <Container>
-      <Register />
+        {/* <Register /> */}
+        <TabScreen />
       </Container>
     );
   }
