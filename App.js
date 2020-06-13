@@ -3,17 +3,12 @@ import { AppLoading } from "expo";
 import { Container, Text } from "native-base";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
-import Login from "./Components/login";
-import Register from "./Components/Register";
 import TabScreen from "./screen/TabScreen";
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isReady: false,
-    };
-  }
+  state = {
+    isReady: false,
+  };
 
   async componentDidMount() {
     await Font.loadAsync({
@@ -28,10 +23,8 @@ export default class App extends React.Component {
     if (!this.state.isReady) {
       return <AppLoading />;
     }
-
     return (
       <Container>
-        {/* <Register /> */}
         <TabScreen />
       </Container>
     );
