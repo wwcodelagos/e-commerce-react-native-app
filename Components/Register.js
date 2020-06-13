@@ -14,7 +14,7 @@ export default function Login() {
   return (
     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null} style={styles.container}>
     <View style={styles.container}>
-      <View style={styles.avatarContainer}>
+    <View style={styles.avatarContainer}>
       <Avatar
       size="medium"
       icon={{name: 'user', type: 'font-awesome', color: '#298ee0'}}
@@ -22,16 +22,20 @@ export default function Login() {
       activeOpacity={0.7}
       containerStyle={styles.avatar}
       />
+       </View>
+      <View style={styles.logoContainer}>
+      <Text style={styles.logoText}>E-Shop</Text>
       </View>
       <View style={styles.formContainer}>
       <Text style={styles.loginheaderText}>Sign Up</Text>
-      <TextInput style={styles.input} placeholder='username' />
+      <TextInput style={styles.input} placeholder='Username' />
         <TextInput style={styles.input} placeholder='Email' />
         <TextInput style={styles.input} placeholder='Password' secureTextEntry={true}/>
         <TouchableOpacity style={styles.button}> 
           <Text style={styles.loginText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
+      {/* <View style={{ flex : 1 }} /> */}
     </View>
     </KeyboardAvoidingView>
   );
@@ -65,9 +69,10 @@ const styles = StyleSheet.create({
       fontSize: 20,
       fontWeight: 'bold',
       paddingBottom: 30,
-      textAlign: 'left'
+      textAlign: 'left',
     },
     input: {
+      paddingHorizontal: 10,
       width: 350,
       height: 50,
       borderColor: '#dbe5e3',
@@ -106,4 +111,20 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: 'bold'
     },
+    logoContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 100,
+      width: 100,
+      borderColor: '#000',
+      borderWidth: 2,
+      borderRadius: 100,
+      marginLeft: 120,
+    },
+    logoText: {
+      color: '#298ee0',
+      fontSize: 18,
+      fontWeight: 'bold'
+       },
+
 });

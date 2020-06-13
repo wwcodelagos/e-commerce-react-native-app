@@ -23,14 +23,17 @@ export default function Login() {
       containerStyle={styles.avatar}
       />
       </View>
+      <View style={styles.logoContainer}>
+      <Text style={styles.logoText}>E-Shop</Text>
+      </View>
       <View style={styles.formContainer}>
       <Text style={styles.loginheaderText}>Log In</Text>
-        <TextInput label='Email' style={styles.input} placeholder='username 0r email' />
+        <TextInput label='Email' style={styles.input} placeholder='Username or Email' />
         <TextInput label='Password' style={styles.input} placeholder='Password' secureTextEntry={true}/>
         <TouchableOpacity style={styles.button}> 
           <Text style={styles.loginText}>Log In</Text>
         </TouchableOpacity>
-        <Text style={styles.loginheaderText}>Don't have an account? Sign Up</Text>
+        <Text style={styles.loginfooterText}>Don't have an account? Sign Up</Text>
       </View>
     </View>
     </KeyboardAvoidingView>
@@ -44,7 +47,7 @@ const styles = StyleSheet.create({
     padding: 15
   },
   avatarContainer: {
-    flex: 2,
+    flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     height: 200
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
     },
     formContainer: {
-      flex: 3,
+      flex: 2,
       justifyContent: 'center',
       alignItems: 'center',
       height: 200
@@ -65,9 +68,10 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: 'bold',
       paddingBottom: 30,
-      textAlign: 'left'
+      textAlign: 'left',
     },
     input: {
+      paddingHorizontal: 10,
       width: 350,
       height: 50,
       borderColor: '#dbe5e3',
@@ -106,4 +110,22 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: 'bold'
     },
+    logoContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 100,
+      width: 100,
+      borderColor: '#000',
+      borderWidth: 2,
+      borderRadius: 100,
+      marginLeft: 120,
+    },
+    logoText: {
+      color: '#298ee0',
+      fontSize: 18,
+      fontWeight: 'bold'
+       },
+    loginfooterText: {
+      marginTop: 20,
+    }
 });
