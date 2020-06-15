@@ -10,6 +10,7 @@ import {
   Dimensions,
 } from 'react-native';
 import { Avatar } from "react-native-elements";
+import Logo from '../Components/Logo';
 
 const { width } = Dimensions.get('screen');
 
@@ -27,18 +28,16 @@ export default function Login() {
           />
         </View>
         <View style={styles.logoContainer}>
-          <View style={styles.logoWrapper}>
-            <Text style={styles.logoText}>E-Shop</Text>
-          </View>
+          <Logo />
         </View>
         <View style={styles.formContainer}>
-          <Text style={styles.loginheaderText}>Sign Up</Text>
-          <TextInput style={styles.input} placeholder='Username' />
-          <TextInput style={styles.input} placeholder='Email' />
-          <TextInput style={styles.input} placeholder='Password' secureTextEntry={true} />
+          <Text style={styles.loginheaderText}>Log In</Text>
+          <TextInput label='Email' style={styles.input} placeholder='Username or Email' />
+          <TextInput label='Password' style={styles.input} placeholder='Password' secureTextEntry={true} />
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.loginText}>Sign Up</Text>
+            <Text style={styles.loginText}>Log In</Text>
           </TouchableOpacity>
+          <Text style={styles.loginfooterText}>Don't have an account? Sign Up</Text>
         </View>
       </View>
     </KeyboardAvoidingView>
@@ -120,19 +119,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: '#000',
-  },
-  logoWrapper: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 3,
-    borderColor: '#298ee0',
-    height: 100,
-    width: 100,
-    borderRadius: 100,
-  },
-  logoText: {
-    color: '#298ee0',
-    fontSize: 18,
-    fontWeight: 'bold'
   },
 });
