@@ -1,7 +1,8 @@
 import React from "react";
 import { Container } from "native-base";
-import Login from "./src/Screens/Login";
-import Register from "./src/Screens/Register";
+import Login from './src/Screens/Login'
+import Register from './src/Screens/Register';
+import Profile from './src/Screens/Profile';
 import Products from "./src/Screens/Products";
 
 function App() {

@@ -48,13 +48,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#e3e9f3',
-    marginTop: 15,
+    padding: 15,
   },
   avatarContainer: {
     flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'center',
-    marginLeft: 30,
   },
   avatar: {
     backgroundColor: '#ffffff',
