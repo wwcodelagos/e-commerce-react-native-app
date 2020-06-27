@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Container, Text } from "native-base";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
@@ -9,6 +9,25 @@ import Register from './src/Screens/Register';
 import Profile from './src/Screens/Profile';
 import Products from "./src/Screens/Products";
 import TabScreen from "./screen/TabScreen";
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Product from './screen/Product'
+import Home from './screen/Home'
+
+
+const Stack = createStackNavigator();
+
+export default function Nav() {
+  return (
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Product" component={Product} />
+    </Stack.Navigator>
+  </NavigationContainer>
+  );
+}
 
 export default class App extends React.Component {
   state = {
