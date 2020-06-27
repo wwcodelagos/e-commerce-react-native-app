@@ -1,8 +1,13 @@
 import React from "react";
-import { AppLoading } from "expo";
 import { Container, Text } from "native-base";
+import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
+
+import Login from './src/Screens/Login'
+import Register from './src/Screens/Register';
+import Profile from './src/Screens/Profile';
+import Products from "./src/Screens/Products";
 import TabScreen from "./screen/TabScreen";
 
 export default class App extends React.Component {
@@ -30,5 +35,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-export default App;
