@@ -1,13 +1,14 @@
 import React from "react";
 import { Container, Text } from "native-base";
+import Profile from '../../src/Screens/Profile';
 import { Alert, View, ActivityIndicator } from "react-native";
 
-const Profile = () => {
+const ProfileTab = () => {
   return (
-    <Container style={{ alignItems: "center", flexGrow: 1 }}>
-      <Text>Profile Tab</Text>
+    <Container >
+      <Profile />
     </Container>
   );
 };
 
-export default Profile;
+export default ProfileTab;
