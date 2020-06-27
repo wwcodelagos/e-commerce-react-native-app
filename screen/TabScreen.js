@@ -19,7 +19,7 @@ import {
 } from "native-base";
 import Home from "./tabs/Home";
 import Cart from "./tabs/Cart";
-import Profile from "./tabs/Profile";
+import ProfileTab from "./tabs/Profile";
 import { StyleSheet } from "react-native";
 
 const TabsScreen = () => {
@@ -33,7 +33,7 @@ const TabsScreen = () => {
     } else if (index === 1) {
       return <Cart />;
     } else {
-      return <Profile />;
+      return <ProfileTab />;
     }
   };
   return (

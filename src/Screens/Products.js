@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableHighlight, ScrollView } from "react-native";
 import {
   Card,
   Button,
@@ -7,12 +7,13 @@ import {
   ListItem,
   ListItemProps,
   ImageProps,
+  ButtonGroup,
 } from "react-native-elements";
 import productsList from "./shared/productsList";
 
 export default function Products() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       {productsList.map((u, i) => {
         return (
           <Card containerStyle={{ padding: 0 }} key={u.id}>
@@ -21,21 +22,43 @@ export default function Products() {
               resizeMode={"cover"}
               source={{ uri: u.image }}
             />
-            <Text style={styles.name}>{u.name}</Text>
+            <View style={styles.details}>
+              <View style={styles.labels}>
+                <Text style={styles.name}>{u.name.toUpperCase()}</Text>
+                <Text style={styles.price}>{u.price}</Text>
+              </View>
+              <View>
+                <Button title="Add to cart" />
+              </View>
+            </View>
           </Card>
         );
       })}
-    </View>
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({
   image: {
-    width: 50,
-    height: 50,
+    width: '100%',
+    minHeight: 150,
+  },
+  details: {
+    padding: 10,
+  },
+  labels: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 5,
+  },
+  name: {
+    fontWeight: '900',
+  },
+  price: {
+    color: 'green',
   },
   container: {
     flex: 1,
-    padding: 0,
+    padding: 20,
   },
   cardStyle: {
     margin: 0,

@@ -6,8 +6,6 @@ import { Ionicons } from "@expo/vector-icons";
 
 import Login from './src/Screens/Login'
 import Register from './src/Screens/Register';
-import Profile from './src/Screens/Profile';
-import Products from "./src/Screens/Products";
 import TabScreen from "./screen/TabScreen";
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -18,14 +16,14 @@ import Home from './screen/Home'
 
 const Stack = createStackNavigator();
 
-export default function Nav() {
+function Nav() {
   return (
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Product" component={Product} />
-    </Stack.Navigator>
-  </NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Product" component={Product} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
